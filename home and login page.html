@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Annamacharya University</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+text-align:center;
+background:#f4f4f4;
+}
+
+header{
+background:#596da5;
+color:white;
+padding:15px;
+cursor:pointer;
+transition: color 0.3s;
+}
+
+nav{
+background:#333;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+cursor:pointer;
+padding:8px 15px;
+}
+
+nav a.active{
+background:rgb(209, 223, 129);
+color:black;
+border-radius:5px;
+}
+
+section{
+display:none;
+padding:40px;
+}
+
+#home{
+display:block;
+}
+
+.box{
+background:white;
+width:250px;
+margin:auto;
+padding:20px;
+border-radius:5px;
+}
+</style>
+
+<script>
+function showPage(page,element){
+
+  var sections=document.querySelectorAll("section");
+  sections.forEach(s=>s.style.display="none");
+
+ 
+  document.getElementById(page).style.display="block";
+
+ 
+  var links=document.querySelectorAll("nav a");
+  links.forEach(l=>l.classList.remove("active"));
+  element.classList.add("active");
+}
+
+function changeHeaderColor(){
+ 
+  var header=document.querySelector("header");
+  if(header.style.color=="orange"){
+    header.style.color="white";
+  }else{
+    header.style.color="orange";
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<header onclick="changeHeaderColor()">
+<h1>Annamacharya University</h1>
+</header>
+
+<nav>
+<a class="active" onclick="showPage('home',this)">Home</a>
+<a onclick="showPage('about',this)">About</a>
+<a onclick="showPage('contact',this)">Contact</a>
+</nav>
+
+<section id="home">
+<h2>Welcome to Annamacharya University</h2>
+<div class="box">
+<h3>Student Login</h3>
+<input type="text" placeholder="Username"><br><br>
+<input type="password" placeholder="Password"><br><br>
+<button>Login</button>
+</div>
+</section>
+
+<section id="about">
+<h2>About College</h2>
+<p>
+Annamacharya Institute of Technology and Sciences provides quality
+education in engineering, management, and technology. The college
+focuses on innovation, research, and career development for students.
+</p>
+</section>
+
+<section id="contact">
+<h2>College Video</h2>
+<a href="https://youtu.be/6C1MlNW0PvM" target="_blank">
+Watch Annamacharya University Video
+</a>
+</section>
+
+</body>
+</html>
